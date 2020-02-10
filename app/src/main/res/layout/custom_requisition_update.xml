@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <TextView
+        android:id="@+id/employeeName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/requisitionDate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="6dip"
+        android:paddingTop="6dip"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/quantityOrdered"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="6dip"
+        android:paddingTop="6dip"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/qtyReceived"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="6dip"
+        android:inputType="number"
+        android:paddingTop="6dip"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+    <CheckBox
+        android:id="@+id/qtyReceivedFull"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Full ordered quantity" />
+</LinearLayout>

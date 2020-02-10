@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AD_Team10</string>
+    <string name="requisition_id">Requisition ID</string>
+    <string name="requisition_date">Requisition Date</string>
+    <string name="employee">Employee ID</string>
+</resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.ad_team10">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".storeActivities.StoreNavigationActivity"/>
+        <activity android:name=".storeActivities.ViewPurchaseOrderActivity"/>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".storeActivities.ViewOrderDetailActivity" />
+        <activity android:name=".storeActivities.ViewDisbursementDetailActivity" />
+        <activity android:name=".storeActivities.ViewDisbursementByDeptActivity" />
+        <activity android:name=".storeActivities.ViewRetrievalListActivity" />
+        <activity android:name=".storeActivities.UpdateOrderDetailActivity" />
+        <activity android:name=".storeActivities.UpdateRetrievalListByItemActivity" />
+        <activity android:name=".storeActivities.ViewRetrievalByItemActivity" />
+        <activity android:name=".storeActivities.UpdateDisbursementDetailActivity" />
+        <activity android:name=".deptHeadActivities.DeptHeadNavigationActivity" />
+        <activity android:name=".deptHeadActivities.AssignRepActivity" />
+        <activity android:name=".deptHeadActivities.ViewPendingRequisitionActivity" />
+        <activity android:name=".deptHeadActivities.ViewRequisitionDetailActivity" />
+        <activity android:name=".deptHeadActivities.ViewRepActivity" />
+        <activity android:name=".deptRepActivities.ChangeCollectionPointActivity" />
+        <activity android:name=".deptRepActivities.DeptRepNavigationActivity" />
+        <activity android:name=".deptRepActivities.ViewCollectionPointActivity" />
+        <activity android:name=".deptRepActivities.ViewDisbursementForDeptActivity" />
+        <activity android:name=".deptRepActivities.ViewDisbursementItemActivity" />
+        <activity android:name=".deptRepActivities.UpdateDisbursementItemActivity" />
+    </application>
+
+</manifest>
