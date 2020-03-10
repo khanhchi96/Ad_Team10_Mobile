@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Author: Phung Khanh Chi, Feng Li Ying-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,18 +9,25 @@
     <TextView
         android:id="@+id/collectionPointName"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:paddingLeft="6dip"
-        android:paddingTop="6dip"
+        android:paddingTop="10dip"
         android:textSize="22sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        />
 
 
     <Button
         android:id="@+id/btnChoose"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:visibility="invisible"
         android:text="Choose"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:background="#ffffff"/>
 </LinearLayout>

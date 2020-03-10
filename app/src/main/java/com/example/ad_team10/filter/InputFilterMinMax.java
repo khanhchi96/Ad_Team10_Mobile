@@ -1,3 +1,5 @@
+//Author: Phung Khanh Chi
+
 package com.example.ad_team10.filter;
 
 import android.text.InputFilter;

@@ -1,3 +1,5 @@
+//Author: Phung Khanh Chi
+
 package com.example.ad_team10.adapters;
 
 import android.annotation.SuppressLint;
@@ -40,11 +42,11 @@ public class CustomDepartmentAdapter extends ArrayAdapter<CustomDepartment> {
             TextView tvRepPhone = v.findViewById(R.id.repPhone);
             TextView tvRepEmail = v.findViewById(R.id.repEmail);
 
-            tvName.setText(department.getDepartmentName());
-            tvCollectionPoint.setText(department.getCollectionPoint().getCollectionPointName());
-            tvRepName.setText(department.getRepresentative().getDeptEmployeeName());
-            tvRepPhone.setText(department.getRepresentative().getPhone());
-            tvRepEmail.setText(department.getRepresentative().getEmail());
+            tvName.setText("Department of " + department.getDepartmentName());
+            tvCollectionPoint.setText("Collection point: " + department.getCollectionPoint().getCollectionPointName());
+            tvRepName.setText("Representative: " + department.getRepresentative().getDeptEmployeeName());
+            tvRepPhone.setText("Representative Phone: " + department.getRepresentative().getPhone());
+            tvRepEmail.setText("Representative Email: " + department.getRepresentative().getEmail());
         }
         Button btnView = v.findViewById(R.id.btnView);
         Button btnUpdate = v.findViewById(R.id.btnUpdate);

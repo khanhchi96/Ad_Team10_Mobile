@@ -1,10 +1,12 @@
+//Author: Phung Khanh Chi
+
 package com.example.ad_team10.clients;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RestService {
-    private static final String URL = "http://192.168.1.106/Stationery/api/";
+    private static final String URL = "http://172.17.19.2/Stationery/api/";
     private static Retrofit retrofit;
     private StationeryService apiService;
 

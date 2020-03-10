@@ -34,9 +34,9 @@
         <activity android:name=".deptHeadActivities.ViewPendingRequisitionActivity" />
         <activity android:name=".deptHeadActivities.ViewRequisitionDetailActivity" />
         <activity android:name=".deptHeadActivities.ViewRepActivity" />
-        <activity android:name=".deptRepActivities.ChangeCollectionPointActivity" />
+        <activity android:name=".deptHeadActivities.ChangeCollectionPointActivity" />
         <activity android:name=".deptRepActivities.DeptRepNavigationActivity" />
-        <activity android:name=".deptRepActivities.ViewCollectionPointActivity" />
+        <activity android:name=".deptHeadActivities.ViewCollectionPointActivity" />
         <activity android:name=".deptRepActivities.ViewDisbursementForDeptActivity" />
         <activity android:name=".deptRepActivities.ViewDisbursementItemActivity" />
         <activity android:name=".deptRepActivities.UpdateDisbursementItemActivity" />

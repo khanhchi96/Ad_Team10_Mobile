@@ -1,20 +1,19 @@
+//Author: Phung Khanh Chi
+
 package com.example.ad_team10.deptRepActivities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ad_team10.R;
 import com.example.ad_team10.adapters.CustomRequisitionUpdateAdapter;
 import com.example.ad_team10.clients.RestService;
-import com.example.ad_team10.models.CustomItem;
 import com.example.ad_team10.models.CustomRequisition;
 
 import java.util.HashMap;
@@ -69,8 +68,8 @@ public class UpdateDisbursementItemActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<CustomRequisition>> call, Throwable t) {
-                System.out.println(t.getCause());
-                System.out.println(t.getMessage());
+                Toast.makeText(getApplicationContext(), "onFailure called ", Toast.LENGTH_SHORT).show();
+                call.cancel();
             }
         });
     }
@@ -99,7 +98,8 @@ public class UpdateDisbursementItemActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
-                System.out.println(t.getMessage());
+                Toast.makeText(getApplicationContext(), "onFailure called ", Toast.LENGTH_SHORT).show();
+                call.cancel();
             }
         });
     }

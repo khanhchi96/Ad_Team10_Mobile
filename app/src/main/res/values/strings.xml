@@ -3,4 +3,13 @@
     <string name="requisition_id">Requisition ID</string>
     <string name="requisition_date">Requisition Date</string>
     <string name="employee">Employee ID</string>
+    <string name="store_login">Store Login</string>
+    <string name="dept_login">Department Login</string>
+    <string name="mgmt_sys">MANAGEMENT SYSTEM</string>
+    <string name="stationery">STATIONERY</string>
+    <string name="copyright">Copyright© Logic University</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="back_to_homepage">Back to homepage</string>
 </resources>

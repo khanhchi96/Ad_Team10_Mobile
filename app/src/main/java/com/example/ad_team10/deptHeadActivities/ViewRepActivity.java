@@ -1,25 +1,20 @@
+//Author: Phung Khanh Chi
+
 package com.example.ad_team10.deptHeadActivities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ad_team10.R;
-import com.example.ad_team10.adapters.CustomRequisitionAdapter;
 import com.example.ad_team10.clients.RestService;
-import com.example.ad_team10.models.CustomDepartment;
 import com.example.ad_team10.models.CustomDeptEmployee;
-import com.example.ad_team10.models.CustomRequisition;
-
-import org.w3c.dom.Text;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -58,12 +53,11 @@ public class ViewRepActivity extends AppCompatActivity {
                 final CustomDeptEmployee rep = response.body();
                 if(rep != null) {
                     if (rep.getDeptEmployeeName() == null && rep.getEmail() == null && rep.getPhone() == null) {
-                        TextView message = findViewById(R.id.message);
                         repName.setText("Your department currently has no representative");
                     }else {
                         repName.setText(rep.getDeptEmployeeName());
-                        repEmail.setText(rep.getEmail());
-                        repPhone.setText(rep.getPhone());
+                        repEmail.setText("Email: " + rep.getEmail());
+                        repPhone.setText("Mobile" + rep.getPhone());
                     }
 
                     btnAssignRep.setOnClickListener(new View.OnClickListener() {
@@ -81,8 +75,8 @@ public class ViewRepActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<CustomDeptEmployee> call, Throwable t) {
-                System.out.println(t.getCause());
-                System.out.println(t.getMessage());
+                Toast.makeText(getApplicationContext(), "onFailure called ", Toast.LENGTH_SHORT).show();
+                call.cancel();
             }
         });
     }

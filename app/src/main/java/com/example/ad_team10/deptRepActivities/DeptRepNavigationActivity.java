@@ -1,3 +1,5 @@
+//Author: Phung Khanh Chi
+
 package com.example.ad_team10.deptRepActivities;
 
 import android.content.Intent;
@@ -6,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,7 +24,6 @@ import retrofit2.Response;
 public class DeptRepNavigationActivity extends AppCompatActivity implements View.OnClickListener{
     TextView txtInfo;
     Button btnEmployeeReq;
-    Button btnCollectionPoint;
     Button btnLogout;
     SharedPreferences sharedPreferences;
     CustomMembershipUser user;
@@ -35,7 +37,6 @@ public class DeptRepNavigationActivity extends AppCompatActivity implements View
 
         txtInfo = findViewById(R.id.txtInfo);
         btnEmployeeReq = findViewById(R.id.btnDisbursement);
-        btnCollectionPoint = findViewById(R.id.btnCollectionPoint);
         btnLogout = findViewById(R.id.btnLogout);
         restService = new RestService();
         sharedPreferences = getSharedPreferences("user_credentials", MODE_PRIVATE);
@@ -48,7 +49,6 @@ public class DeptRepNavigationActivity extends AppCompatActivity implements View
         getDepartmentId(user.getUserID());
         btnLogout.setOnClickListener(this);
         btnEmployeeReq.setOnClickListener(this);
-        btnCollectionPoint.setOnClickListener(this);
     }
 
     private void getDepartmentId(int deptUserId){
@@ -61,7 +61,8 @@ public class DeptRepNavigationActivity extends AppCompatActivity implements View
 
             @Override
             public void onFailure(Call<Integer> call, Throwable t) {
-
+                Toast.makeText(getApplicationContext(), "onFailure called ", Toast.LENGTH_SHORT).show();
+                call.cancel();
             }
         });
     }
@@ -72,13 +73,6 @@ public class DeptRepNavigationActivity extends AppCompatActivity implements View
             case R.id.btnDisbursement:
                 intent = new Intent(DeptRepNavigationActivity.this,
                         ViewDisbursementForDeptActivity.class);
-                intent.putExtra("departmentId", departmentId);
-                startActivity(intent);
-                break;
-
-            case R.id.btnCollectionPoint:
-                intent = new Intent(DeptRepNavigationActivity.this,
-                        ViewCollectionPointActivity.class);
                 intent.putExtra("departmentId", departmentId);
                 startActivity(intent);
                 break;

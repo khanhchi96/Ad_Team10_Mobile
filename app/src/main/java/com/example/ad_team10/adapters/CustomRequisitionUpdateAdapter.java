@@ -1,3 +1,5 @@
+//Author: Phung Khanh Chi
+
 package com.example.ad_team10.adapters;
 
 import android.annotation.SuppressLint;
@@ -63,8 +65,8 @@ public class CustomRequisitionUpdateAdapter extends ArrayAdapter<CustomRequisiti
             final CustomItem item = requisition.getCustomItems()[0];
 
             tvName.setText(requisition.getEmployeeName());
-            tvDate.setText(requisition.getRequisitionDate());
-            tvQty.setText(Integer.toString(item.getQuantity()));
+            tvDate.setText("Requisition Date:" + requisition.getRequisitionDate() );
+            tvQty.setText("Quantity Requested: " + item.getQuantity());
             etQtyReceived.setFilters(new InputFilter[]{ new InputFilterMinMax("1", Integer.toString(item.getQuantity()))});
 
             if(qtyReceived == item.getQuantity()) cbQtyReceivedFull.setChecked(true);

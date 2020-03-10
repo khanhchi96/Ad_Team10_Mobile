@@ -1,3 +1,5 @@
+//Author: Phung Khanh Chi
+
 package com.example.ad_team10.adapters;
 
 import android.annotation.SuppressLint;
@@ -42,8 +44,8 @@ public class CustomEmployeeAdapter extends ArrayAdapter<CustomDeptEmployee> {
 
             tvName.setText(employee.getDeptEmployeeName());
             tvDesignation.setText(employee.getDesignation());
-            tvEmail.setText(employee.getEmail());
-            tvPhone.setText(employee.getPhone());
+            tvEmail.setText("Email: " + employee.getEmail());
+            tvPhone.setText("Mobile" + employee.getPhone());
 
             Button btnAssign = v.findViewById(R.id.btnAssign);
                 if(chosenId == position){

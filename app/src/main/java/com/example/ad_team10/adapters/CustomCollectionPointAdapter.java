@@ -1,3 +1,5 @@
+//Author: Phung Khanh Chi
+
 package com.example.ad_team10.adapters;
 
 import android.annotation.SuppressLint;
@@ -11,7 +13,6 @@ import android.widget.TextView;
 
 import com.example.ad_team10.R;
 import com.example.ad_team10.models.CollectionPoint;
-import com.example.ad_team10.models.CustomDeptEmployee;
 
 import java.util.List;
 

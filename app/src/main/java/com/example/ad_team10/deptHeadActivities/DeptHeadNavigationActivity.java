@@ -1,3 +1,5 @@
+//Author: Phung Khanh Chi
+
 package com.example.ad_team10.deptHeadActivities;
 
 import android.content.Intent;
@@ -6,16 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ad_team10.R;
 import com.example.ad_team10.clients.RestService;
 import com.example.ad_team10.models.CustomMembershipUser;
-import com.example.ad_team10.storeActivities.StoreNavigationActivity;
-import com.example.ad_team10.storeActivities.ViewDisbursementByDeptActivity;
-import com.example.ad_team10.storeActivities.ViewPurchaseOrderActivity;
-import com.example.ad_team10.storeActivities.ViewRetrievalListActivity;
 import com.google.gson.Gson;
 
 import retrofit2.Call;
@@ -26,6 +25,7 @@ public class DeptHeadNavigationActivity extends AppCompatActivity implements Vie
     TextView txtInfo;
     Button btnRequisition;
     Button btnAssigningRep;
+    Button btnCollectionPoint;
     Button btnLogout;
     SharedPreferences sharedPreferences;
     CustomMembershipUser user;
@@ -40,6 +40,7 @@ public class DeptHeadNavigationActivity extends AppCompatActivity implements Vie
         txtInfo = findViewById(R.id.txtInfo);
         btnRequisition = findViewById(R.id.btnRequisition);
         btnAssigningRep = findViewById(R.id.btnAssigningRep);
+        btnCollectionPoint = findViewById(R.id.btnCollectionPoint);
         btnLogout = findViewById(R.id.btnLogout);
         restService = new RestService();
         sharedPreferences = getSharedPreferences("user_credentials", MODE_PRIVATE);
@@ -53,6 +54,7 @@ public class DeptHeadNavigationActivity extends AppCompatActivity implements Vie
         btnLogout.setOnClickListener(this);
         btnRequisition.setOnClickListener(this);
         btnAssigningRep.setOnClickListener(this);
+        btnCollectionPoint.setOnClickListener(this);
     }
 
     private void getDepartmentId(int deptUserId){
@@ -65,7 +67,8 @@ public class DeptHeadNavigationActivity extends AppCompatActivity implements Vie
 
             @Override
             public void onFailure(Call<Integer> call, Throwable t) {
-
+                Toast.makeText(getApplicationContext(), "onFailure called ", Toast.LENGTH_SHORT).show();
+                call.cancel();
             }
         });
     }
@@ -84,6 +87,13 @@ public class DeptHeadNavigationActivity extends AppCompatActivity implements Vie
             case R.id.btnAssigningRep:
                 intent = new Intent(DeptHeadNavigationActivity.this,
                         ViewRepActivity.class);
+                intent.putExtra("departmentId", departmentId);
+                startActivity(intent);
+                break;
+
+            case R.id.btnCollectionPoint:
+                intent = new Intent(DeptHeadNavigationActivity.this,
+                        ViewCollectionPointActivity.class);
                 intent.putExtra("departmentId", departmentId);
                 startActivity(intent);
                 break;

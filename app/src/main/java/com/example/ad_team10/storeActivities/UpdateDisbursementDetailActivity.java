@@ -1,13 +1,13 @@
+//Author: Phung Khanh Chi
+
 package com.example.ad_team10.storeActivities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,7 +17,6 @@ import com.example.ad_team10.clients.RestService;
 import com.example.ad_team10.models.CustomDepartment;
 import com.example.ad_team10.models.CustomDisbursementList;
 import com.example.ad_team10.models.CustomItem;
-import com.example.ad_team10.models.CustomRequisition;
 import com.google.gson.Gson;
 
 import java.util.HashMap;
@@ -74,10 +73,6 @@ public class UpdateDisbursementDetailActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<CustomItem>> call, Response<List<CustomItem>> response) {
                 List<CustomItem> items = response.body();
-//                List<CustomItem> pendingItems = new ArrayList<>();
-//                for(int i=0; i<items.size(); i++){
-//                    if(items.get(i).getQuantityReceived() < items.get(i).getQuantity()) pendingItems.add(items.get(i));
-//                }
                 adapter = new CustomItemUpdateAdapter(UpdateDisbursementDetailActivity.this,
                         R.layout.custom_item_update, items);
                 listView.setAdapter(adapter);
@@ -85,8 +80,8 @@ public class UpdateDisbursementDetailActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<CustomItem>> call, Throwable t) {
-                System.out.println(t.getCause());
-                System.out.println(t.getMessage());
+                Toast.makeText(getApplicationContext(), "onFailure called ", Toast.LENGTH_SHORT).show();
+                call.cancel();
             }
         });
     }
@@ -118,7 +113,8 @@ public class UpdateDisbursementDetailActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
-                System.out.println(t.getMessage());
+                Toast.makeText(getApplicationContext(), "onFailure called ", Toast.LENGTH_SHORT).show();
+                call.cancel();
             }
         });
     }

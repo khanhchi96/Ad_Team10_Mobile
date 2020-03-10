@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Author: Phung Khanh Chi, Feng Li Ying-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
-android:layout_height="match_parent">
+android:layout_height="match_parent"
+    >
 <TextView
     android:id="@+id/message"
     android:layout_width="wrap_content"
@@ -11,21 +12,36 @@ android:layout_height="match_parent">
     app:layout_constraintBottom_toTopOf="@id/listView"
     app:layout_constraintTop_toTopOf="parent"
     android:layout_marginLeft="10dp"
-    app:layout_constraintLeft_toLeftOf="parent"/>
+    app:layout_constraintLeft_toLeftOf="parent"
+    android:paddingTop="10dp"
+    android:textSize="20sp"
+    android:fontFamily="sans-serif-light"/>
 
-<ListView
-    android:id="@+id/listView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
 
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@android:color/background_light"
+            android:background="#cc9216"
+            android:dividerHeight="3.0sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
 <Button
     android:id="@+id/update"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="update"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintTop_toBottomOf="@id/listView"
-    android:layout_marginLeft="100px"
-    app:layout_constraintLeft_toLeftOf="parent"
-    android:visibility="invisible"/>
+    android:visibility="invisible"
+    android:background="#9a9a9a"
+    android:textColor="#ffffff"
+    android:textSize="18sp"
+    android:textStyle="bold" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

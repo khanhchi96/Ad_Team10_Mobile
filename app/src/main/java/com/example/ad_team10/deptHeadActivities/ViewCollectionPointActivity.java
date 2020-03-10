@@ -1,4 +1,6 @@
-package com.example.ad_team10.deptRepActivities;
+//Author: Phung Khanh Chi
+
+package com.example.ad_team10.deptHeadActivities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,15 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ad_team10.R;
 import com.example.ad_team10.clients.RestService;
-import com.example.ad_team10.deptHeadActivities.AssignRepActivity;
-import com.example.ad_team10.deptHeadActivities.ViewRepActivity;
 import com.example.ad_team10.models.CollectionPoint;
-import com.example.ad_team10.models.CustomDeptEmployee;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -48,7 +48,6 @@ public class ViewCollectionPointActivity extends AppCompatActivity {
             public void onResponse(Call<CollectionPoint> call, Response<CollectionPoint> response) {
                 final CollectionPoint collectionPoint = response.body();
                 if(collectionPoint != null) {
-
                        collectionPointName.setText(collectionPoint.getCollectionPointName());
                     }
 
@@ -64,8 +63,8 @@ public class ViewCollectionPointActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<CollectionPoint> call, Throwable t) {
-                System.out.println(t.getCause());
-                System.out.println(t.getMessage());
+                Toast.makeText(getApplicationContext(), "onFailure called ", Toast.LENGTH_SHORT).show();
+                call.cancel();
             }
         });
     }

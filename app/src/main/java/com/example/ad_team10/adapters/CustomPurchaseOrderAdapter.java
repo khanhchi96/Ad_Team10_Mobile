@@ -1,3 +1,5 @@
+//Author: Phung Khanh Chi
+
 package com.example.ad_team10.adapters;
 
 import android.annotation.SuppressLint;
@@ -40,9 +42,9 @@ public class CustomPurchaseOrderAdapter extends ArrayAdapter<CustomPurchaseOrder
             TextView tvSupplier = v.findViewById(R.id.supplier_name);
 
             tvId.setText(Integer.toString(order.getOrderID()));
-            tvDate.setText(order.getOrderDate());
-            tvStatus.setText(order.getStatus());
-            tvSupplier.setText(order.getSupplierName());
+            tvDate.setText("Order Date: " + order.getOrderDate());
+            tvStatus.setText("Status: " + order.getStatus());
+            tvSupplier.setText("Supplier: " + order.getSupplierName());
             Button btnView = v.findViewById(R.id.btnView);
             Button btnUpdate = v.findViewById(R.id.btnUpdate);
 

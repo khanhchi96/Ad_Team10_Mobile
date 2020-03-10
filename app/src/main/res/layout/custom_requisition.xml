@@ -1,36 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Author: Phung Khanh Chi, Feng Li Ying-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
     <TextView
         android:id="@+id/employeeName"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:paddingLeft="10dp"
+        android:textAllCaps="true"
+        android:fontFamily="sans-serif-light"/>
 
     <TextView
         android:id="@+id/requisitionDate"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="6dip"
-        android:paddingTop="6dip"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:textStyle="italic"
+        android:fontFamily="sans-serif-light"/>
+
     <TextView
         android:id="@+id/quantityOrdered"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="6dip"
-        android:paddingTop="6dip"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:textStyle="italic"
+        android:fontFamily="sans-serif-light"/>
 
     <TextView
         android:id="@+id/quantityReceived"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="6dip"
-        android:paddingTop="6dip"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:textStyle="italic"
+        android:fontFamily="sans-serif-light"/>
 </LinearLayout>

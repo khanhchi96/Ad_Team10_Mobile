@@ -1,3 +1,5 @@
+//Author: Phung Khanh Chi
+
 package com.example.ad_team10.adapters;
 
 import android.annotation.SuppressLint;
@@ -51,13 +53,16 @@ public class CustomItemUpdateAdapter extends ArrayAdapter<CustomItem> {
             TextView tvId = v.findViewById(R.id.id);
             TextView tvName = v.findViewById(R.id.name);
             TextView tvQtyOrdered = v.findViewById(R.id.qtyOrdered);
+            TextView editType = v.findViewById(R.id.editType);
+
+            editType.setText("Quantity received: ");
             final EditText etQtyReceived = v.findViewById(R.id.qtyReceived);
             CheckBox cbQtyReceivedFull = v.findViewById(R.id.qtyReceivedFull);
             etQtyReceived.setFilters(new InputFilter[]{ new InputFilterMinMax("1", Integer.toString(item.getQuantity()))});
 
             tvId.setText(Integer.toString(item.getItemID()));
             tvName.setText(item.getDescription());
-            tvQtyOrdered.setText(Integer.toString(item.getQuantity()));
+            tvQtyOrdered.setText("Quantity ordered: " + item.getQuantity());
             if(qtyReceived == item.getQuantity()) cbQtyReceivedFull.setChecked(true);
             else if(qtyReceived > 0 && etQtyReceived.getText().toString().length() == 0) {
                 etQtyReceived.setText(Integer.toString(qtyReceived));
@@ -72,12 +77,12 @@ public class CustomItemUpdateAdapter extends ArrayAdapter<CustomItem> {
                     if(isChecked){
                         etQtyReceived.setEnabled(false);
                         etQtyReceived.setFocusable(false);
-                        quantityReceived.replace(item.getItemID(), item.getQuantity());
+                        quantityReceived.put(item.getItemID(), item.getQuantity());
                     }else {
                         etQtyReceived.setEnabled(true);
                         etQtyReceived.setFocusableInTouchMode(true);
-                        if(etQtyReceived.getText().toString().length() == 0) quantityReceived.replace(item.getItemID(), 0);
-                        else quantityReceived.replace(item.getItemID(), Integer.parseInt(etQtyReceived.getText().toString()));
+                        if(etQtyReceived.getText().toString().length() == 0) quantityReceived.put(item.getItemID(), 0);
+                        else quantityReceived.put(item.getItemID(), Integer.parseInt(etQtyReceived.getText().toString()));
                     }
                 }
             });
@@ -95,9 +100,9 @@ public class CustomItemUpdateAdapter extends ArrayAdapter<CustomItem> {
                 @Override
                 public void afterTextChanged(Editable s) {
                     if(s.toString().length() > 0){
-                        quantityReceived.replace(item.getItemID(), Integer.parseInt(s.toString()));
+                        quantityReceived.put(item.getItemID(), Integer.parseInt(s.toString()));
                     }else{
-                        quantityReceived.replace(item.getItemID(), item.getQuantityReceived());
+                        quantityReceived.put(item.getItemID(), item.getQuantityReceived());
                     }
                 }
             });

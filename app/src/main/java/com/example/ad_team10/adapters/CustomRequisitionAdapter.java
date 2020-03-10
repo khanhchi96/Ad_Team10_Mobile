@@ -1,3 +1,5 @@
+//Author: Phung Khanh Chi
+
 package com.example.ad_team10.adapters;
 
 import android.annotation.SuppressLint;
@@ -41,16 +43,18 @@ public class CustomRequisitionAdapter extends ArrayAdapter<CustomRequisition> {
             TextView tvDate = v.findViewById(R.id.requisitionDate);
             TextView tvQty = v.findViewById(R.id.quantityOrdered);
             TextView tvQtyReceived = v.findViewById(R.id.quantityReceived);
+
             if(!isByItem){
                 tvQty.setVisibility(View.GONE);
                 tvQtyReceived.setVisibility(View.GONE);
             }else {
-                tvQty.setText(Integer.toString(requisition.getCustomItems()[0].getQuantity()));
-                tvQtyReceived.setText(Integer.toString(requisition.getCustomItems()[0].getQuantityReceived()));
+                tvQty.setText("Quantity Requested: " + requisition.getCustomItems()[0].getQuantity());
+                tvQtyReceived.setText("Quantity Received :" + requisition.getCustomItems()[0].getQuantityReceived());
             }
 
             tvName.setText(requisition.getEmployeeName());
-            tvDate.setText(requisition.getRequisitionDate());
+            tvDate.setText("Requisition Date: " + requisition.getRequisitionDate());
+
         }
         return v;
     }

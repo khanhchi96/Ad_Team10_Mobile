@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Author: Phung Khanh Chi, Feng Li Ying-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -8,27 +9,57 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="100dp"
+        android:textColor="#cc9216"
+        android:textStyle="bold|italic"
+        android:textSize="20dp"/>
+
     <Button
         android:id="@+id/btnRequisition"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="Pending Requisition" />
+        android:layout_marginTop="40dp"
+        android:background="@drawable/navigation_page_button"
+        android:text="Pending Requisition"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="15dp"/>
+
     <Button
         android:id="@+id/btnAssigningRep"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="Assigning Representative" />
+        android:layout_marginTop="40dp"
+        android:background="@drawable/navigation_page_button"
+        android:text="Assigning Representative"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="15dp"/>
+
+    <Button
+        android:id="@+id/btnCollectionPoint"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/navigation_page_button"
+        android:text="Change Collection Point"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="15dp" />
+
     <Button
         android:id="@+id/btnLogout"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="Log Out" />
+        android:layout_marginTop="40dp"
+        android:background="@drawable/navigation_page_button"
+        android:text="Log Out"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="15dp"/>
 
 </LinearLayout>

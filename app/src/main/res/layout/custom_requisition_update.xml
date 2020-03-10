@@ -1,43 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Author: Phung Khanh Chi, Feng Li Ying-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    android:padding ="10dp">
     <TextView
         android:id="@+id/employeeName"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
-
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textAllCaps="true"
+        android:fontFamily="sans-serif-light"/>
     <TextView
         android:id="@+id/requisitionDate"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="6dip"
-        android:paddingTop="6dip"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:paddingTop="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:fontFamily="sans-serif-light"
+        />
 
     <TextView
         android:id="@+id/quantityOrdered"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="6dip"
-        android:paddingTop="6dip"
-        android:textSize="22sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/qtyReceived"
+        android:paddingTop="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-light"/>
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="6dip"
-        android:inputType="number"
-        android:paddingTop="6dip"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:paddingTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity Offered: "
+            android:textSize="18sp"/>
+        <EditText
+            android:id="@+id/qtyReceived"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:inputType="number"
+            android:background="@drawable/input_txt" />
+    </LinearLayout>
     <CheckBox
         android:id="@+id/qtyReceivedFull"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Full ordered quantity" />
+        android:text="Full ordered quantity"
+        android:layout_gravity="left"
+        android:theme="@style/WhiteCheck"
+        android:textSize="18sp"
+        android:paddingTop="10dp"
+        />
+
 </LinearLayout>

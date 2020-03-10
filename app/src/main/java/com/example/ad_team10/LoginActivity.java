@@ -1,3 +1,5 @@
+//Author: Phung Khanh Chi
+
 package com.example.ad_team10;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,7 +33,7 @@ public class LoginActivity extends AppCompatActivity  {
     EditText txtUsername;
     EditText txtPassword;
     Button btnLogin;
-    Button btnBack;
+    ImageButton btnBack;
     TextView error;
     SharedPreferences sharedPreferences;
     RestService restService;

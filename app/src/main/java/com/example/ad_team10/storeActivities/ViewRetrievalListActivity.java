@@ -1,3 +1,5 @@
+//Author: Phung Khanh Chi
+
 package com.example.ad_team10.storeActivities;
 
 import android.content.Intent;
@@ -7,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -85,8 +88,8 @@ public class ViewRetrievalListActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<CustomItem>> call, Throwable t) {
-                System.out.println(t.getCause());
-                System.out.println(t.getMessage());
+                Toast.makeText(getApplicationContext(), "onFailure called ", Toast.LENGTH_SHORT).show();
+                call.cancel();
             }
         });
     }
@@ -105,7 +108,7 @@ public class ViewRetrievalListActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
-        if (requestCode == ON_UPDATE_RETURN) {
+        if (requestCode == ON_UPDATE_RETURN || requestCode == ON_VIEW_RETURN) {
             if (resultCode == RESULT_OK) {
                 String jsonItem = intent.getStringExtra("item");
                 loadRetrievalList();

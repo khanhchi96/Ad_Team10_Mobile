@@ -1,3 +1,5 @@
+//Author: Phung Khanh Chi
+
 package com.example.ad_team10.adapters;
 
 import android.annotation.SuppressLint;
@@ -42,8 +44,8 @@ public class CustomRetrievalAdapter extends ArrayAdapter<CustomRetrievalListDeta
             TextView tvQtyReceived = v.findViewById(R.id.quantityReceived);
 
             tvName.setText(detail.getDepartmentName());
-            tvQty.setText(Integer.toString(detail.getQuantity()));
-            tvQtyReceived.setText(Integer.toString(detail.getQuantityOffered()));
+            tvQty.setText("Quantity Requested: " + detail.getQuantity());
+            tvQtyReceived.setText("Quantity Offered: " + detail.getQuantityOffered());
         }
         return v;
     }
